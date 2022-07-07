@@ -1,0 +1,71 @@
+<a [routerLink]="['/login']">Login</a>
+<p id ="title">Register Page</p>
+
+<form [formGroup]="registerForm" (ngSubmit)= "onSubmit(registerForm)">
+    <label for="firstName">FirstName </label>
+    <input id="firstName" type="text" formControlName="firstName">
+   
+<p *ngIf= "firstName!.errors?.['required']">
+    A firstname is required.
+</p>
+
+  <label for="lastName">LastName </label>
+    <input id="lastName" type="text" formControlName="lastName">
+
+    <p *ngIf= "lastName!.errors?.['required']">
+      A lastname is required.
+    </p> 
+
+    <label for="email">Email </label>
+      <input id="email" type="email" formControlName="email">
+
+      <p *ngIf= "email!.errors?.['required']">An email is required.</p>
+      <p *ngIf= "email!.errors?.['email']">The email must have an email format</p> 
+  
+    <label for="userName">UserName </label>
+      <input id="userName" type="text" formControlName="userName">
+
+      <p *ngIf= "userName!.errors?.['required']">
+        An username is required.
+      </p> 
+
+      <label for="password">Password </label>
+      <input id="password" type="text" formControlName="password"> 
+  
+      <p *ngIf= "password!.errors?.['minLength']">
+        
+       </p> 
+      <p *ngIf= "password!.errors?.['required']">
+       A password is required.It must be 8 characters long,contain an uppercase letter,a digit and a sign. 
+      </p> 
+      
+
+
+      <label for="confirmPassword">Confirmation Password </label>
+      <input id="confirmPassword" type="text" formControlName="confirmPassword"> 
+  
+      <p *ngIf= "confirmPassword!.errors?.['required']">
+        A password is required.
+       </p> 
+       <p *ngIf= "confirmPassword!.errors?.['minLength']">
+         The confirm password must match the original password.
+        </p> 
+
+
+      <label for="city">City </label>
+      <input id="city" type="text" formControlName="city">
+  
+
+      <p *ngIf= "city!.errors?.['required']">
+        A city name is required.
+      </p> 
+
+      <label for="country">Country </label>
+      <input id="country" type="text" formControlName="country">
+
+      <p *ngIf= "country!.errors?.['required']">
+        A country is required.
+      </p> 
+
+   <button id = "registerButton" type="submit" [disabled]="!registerForm.valid">Register</button>
+</form>

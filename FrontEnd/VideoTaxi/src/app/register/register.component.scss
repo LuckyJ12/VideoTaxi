@@ -1,0 +1,75 @@
+form{
+    position: relative;
+    top:-100px;
+    margin: auto;
+    width: 50%;
+    border: 3px solid green;
+    padding: 10px;
+    
+}
+
+a{
+    font-size: 30px;
+}
+
+#title{
+   font-size: 30px;
+}
+
+#userName{
+
+   width:95%;
+   height: 40px;
+}
+
+#firstName{
+
+    width:95%;
+    height: 40px;
+ }
+
+#lastName{
+    
+    width:95%;
+    height: 40px;
+ }
+
+ #email{
+    width:95%;
+    height: 40px;
+ }
+
+#password{
+   
+    width: 95%;
+    height: 40px;
+}
+
+#confirmPassword{
+    width: 95%;
+    height: 40px;
+}
+
+#city{
+  
+    width: 95%;
+    height: 40px;
+}
+
+#country{
+    width: 95%;
+    height: 40px;
+}
+
+input{
+    font-size: 18px;
+}
+
+label{
+    font-size: 22px;
+}
+
+#registerButton{
+    font-size: 22px;
+    width:25%;
+}

@@ -1,0 +1,17 @@
+<a [routerLink]="['/register']">Register</a>
+<p id="title">Login Page</p>
+
+<form [formGroup]= "loginForm" (ngSubmit)= "onSubmit(loginForm)">
+    <label for="email">Email </label>
+    <input id="email" type="email" formControlName="email" >
+   
+    <p *ngIf= "email!.errors?.['required']">An email is required.</p>
+    <p *ngIf= "email!.errors?.['email']">It must have an email format</p> 
+    
+    <label for="password">Password </label>
+    <input id="password"   type="text" formControlName="password" minlength="8" required>
+
+    <p *ngIf= "password!.errors?.['required']"> A password is required.</p>
+    <p *ngIf= "password!.errors?.['minlength']">Password must be at least 8 characters long</p>
+     
+    <button id="loginButton" type="submit" [disabled]="!loginForm.valid">Login</button>       
